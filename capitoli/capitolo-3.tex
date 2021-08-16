@@ -114,8 +114,7 @@ I vantaggi principali di Ionic e delle App Ibride Web View Wrapper sono:
 Lo svantaggio principale di questo tipo di applicazioni sta in termini di velocità di calcolo e quindi avranno prestazioni inferiori a quelle compilate in nativo.\\
 
 \subsection{App Ibride Compile to Native}
-Le applicazioni ibride che compilano in nativo utilizzano un unico linguaggio di programmazione per la scrittura del codice. Una volta compilato i componenti dell'interfaccia utente del codice vengono convertiti nei componenti dell'interfaccia utente nativi.
-Ad esempio se bisogna creare un nuovo Widget questo una volta compilato verrà tradotto nel Widget nativo del sistema operativo di esecuzione.
+Le applicazioni ibride che compilano in nativo utilizzano un unico linguaggio di programmazione per la scrittura del codice. Una volta compilato i componenti dell'interfaccia utente del codice vengono convertiti nei componenti dell'interfaccia utente nativi senza bisogno di configurazioni particolari.\\
 Le principali piattaforme utilizzate per compilare in nativo sono:
 \begin{itemize}
 	\item React Native; 
@@ -137,13 +136,13 @@ I vantaggi principali di utilizzare piattaforme che compilano in nativo sono:
 	\caption{Logo Flutter}
 	\label{fig:Logo Flutter}
 \end{figure}
-Flutter è un framework nato abbastanza di recente per lo sviluppo di applicazioni per diverse piattaforme.
-È stato ideato da Google come progetto open source e pubblicato ufficialmente per la prima volta a dicembre del 2018 nella versione 1.0 all'evento Flutter Live.
-Il 3 marzo 2021 è stata rilasciata la versione 2.0 che consente agli sviluppatori di generare in maniera stabile applicazioni multipiattaforma.
+Flutter è un framework nato abbastanza di recente per lo sviluppo di applicazioni per diverse piattaforme.\\
+È stato ideato da Google come progetto open source e pubblicato ufficialmente per la prima volta a dicembre del 2018 nella versione 1.0 all'evento Flutter Live.\\
+Il 3 marzo 2021 è stata rilasciata la versione 2.0 che consente agli sviluppatori di generare in maniera stabile applicazioni multipiattaforma.\\
 Flutter offre una vasta serie di librerie di elementi di interfaccia utente e combina la facilità di sviluppo con prestazioni simili alle prestazioni native, mantenendo una corretta distinzione visiva tra le diverse piattaforme senza che il programmatore debba prestare particolari attenzioni.
-Viene utilizzato sopratutto per applicazione Android e iOS e funziona come una vera applicazione nativa.
-Utilizzando lo stesso codebase è possibile creare l'applicazione per diverse piattaforme.
-Il linguaggio di programmazione di Flutter è Dart, sviluppato anche esso da Google, ed è stato pensato per sostituire JavaScript.
+Viene utilizzato sopratutto per applicazione Android e iOS e funziona come una vera applicazione nativa.\\
+Utilizzando lo stesso codebase è possibile creare l'applicazione per diverse piattaforme.\\
+Il linguaggio di programmazione di Flutter è Dart, sviluppato anche esso da Google, ed è stato pensato per sostituire JavaScript.\\
 Flutter è completamente gratuito e come possiamo vedere dalla figura sottostante, già nell'ultimo anno la sua popolarità e utilizzo è cresciuta notevolmente.\\
 \begin{figure}[htbp]	
 	\centering
@@ -156,7 +155,7 @@ Anche se molto recente, nel Google Play Store possiamo contare oltre 50000 appli
 I vantaggi di utilizzare Flutter sono:
 \begin{itemize}
 	\item Un codebase per tutte le piattaforme; 
-	\item Utilizzo di Dart che è un linguaggio facile da apprendere;  
+	\item Utilizzo di \hyperref[sec:Dart]{Dart} che è un linguaggio facile da apprendere;  
 	\item Più facile da sviluppare applicazioni con Flutter che quindi entrano sul mercato più in fretta;
 	\item Si basa sul principio 'Tutto è un Widget' che sarà spiegato nella \hyperref[sec:Widget]{sezione Widget};
 	\item Basso consumo di risorse;
@@ -171,24 +170,69 @@ Invece tra gli svantaggi possiamo citare che:
 	\item Vengono create app di grandi dimensioni rispetto agli altri framework o anche a Java stesso.\\
 \end{itemize}
 \subsection{Dart}
-Dart è un linguaggio di programmazione sviluppato da Google e presentato per la prima volta il 10 ottobre del 2011 alla conferenza 'GOTO Aarhus 2011'.
-Lo scopo principale è quello di sostituire JavaScript per lo sviluppo delle applicazioni.
+\label{sec:Dart}
+Dart è un linguaggio di programmazione sviluppato da Google e presentato per la prima volta il 10 ottobre del 2011 alla conferenza 'GOTO Aarhus 2011'.\\
+Lo scopo principale è quello di sostituire JavaScript per lo sviluppo delle applicazioni.\\
 Dart costituisce la base di Flutter e inoltre supporta molte attività di sviluppo di base come la formattazione, l'analisi, il test del codice...\\
-Dart è type-safe. Inoltre i valori in Dart non possono essere null tranne nei casi in cui viene indicato che questi valori possono esserlo, così da evitare possibili errori nel codice.
-Dart ha un vasto numero di librerie di base e di pacchetti per le API aggiuntive.
+Dart è type-safe. Inoltre i valori in Dart non possono essere null tranne nei casi in cui viene indicato che questi valori possono esserlo, così da evitare possibili errori nel codice.\\
+Dart ha un vasto numero di librerie di base e di pacchetti per le API aggiuntive.\\
 Dart permette di scrivere programmi attraverso due distinte piattaforme:
 \begin{itemize}
 	\item Dart Native: per le applicazioni sviluppate per dispositivi mobili e desktop. Include sia una macchina virtuale Dart con compilazione JIT (just-in-time), ovvero viene compilato durante l'esecuzione del programma, sia un compilatore AOT (Ahead-of-Time) per la produzione di codice macchina, ovvero  viene compilato prima dell'esecuzione, tipicamente durante l'installazione del programma così migliorando le prestazioni evitando la fase di compilazione durante l'esecuzione del programma;  
-	\item Dart Web: per le applicazioni destinate al Web. Include sia un compilatore del tempo di sviluppo (dartdevc) che consente di eseguire ed eseguire il debug dell'app Web Dart nel browser Chrome e vedere le modifiche quasi immediatamente, che un compilatore del tempo di produzione (dart2js) che fornisce suggerimenti per migliorare il codice Dart e rimuovere il codice inutilizzato. Entrambi i compilatori traducono Dart in JavaScript.\\
+	\item Dart Web: per le applicazioni destinate al Web. Include sia un compilatore del tempo di sviluppo (dartdevc) che consente di eseguire il debug dell'applicazione nel browser Chrome e vedere le modifiche quasi immediatamente, che un compilatore del tempo di produzione (dart2js) che fornisce suggerimenti per migliorare il codice Dart e rimuovere il codice inutilizzato. Entrambi i compilatori traducono Dart in JavaScript.\\
 \end{itemize}
 
 \subsection{Componenti}
+Flutter è formato da un'architettura a strati e i suoi tre strati fondamentali sono:
+\begin{itemize}
+	\item Framework; 
+	\item Engine;  
+	\item Embedder.\\
+\end{itemize}
+\begin{figure}[htbp]	
+	\centering
+	\includegraphics[width=13cm]{immagini/composizione.png}
+	\caption{Architettura a strati di Flutter}
+	\label{fig:Architettura a strati di Flutter}
+\end{figure}
 
-\subsubsection{Framework}
+\newpage
+
+\subsubsection{Embedder}
+Embedder è il livello più basso dell'architettura.\\
+Il linguaggio utilizzato è definito in base alla piattaforma e attualmente può essere: Java e C++ per Android, Objective-C/Objective-C++ per iOS e macOS e C++ per Windows e Linux.
+Ha lo scopo di legare il rendering della schermata nativa, la gestione degli eventi,...\\
+Per fare ciò lo strato Embedder interagisce con lo strato Engine tramite delle API C/C++.
+Inoltre lo strato Embedder è composta da una Shell che ospita anche la Dart VM.		\\
+Ogni Shell è specifica per ogni piattaforma e offre un accesso alle API native della piattaforma in questione.
 
 \subsubsection{Engine}
-Skia
-\subsubsection{Embedder}
+Engine è lo strato intermedio dell'architettura.\\
+Il linguaggio utilizzato è principalmente il C++ e il C per rendere più veloci ed efficienti le applicazioni realizzate in Flutter.\\
+Contiene componenti di basso livello essenziali per il funzionamento del framework.\\
+All'interno troviamo il motore grafico \textit{Skia}, una libreria grafica 2D open source scritta in C++ creata da Google, e le shell a cui è possibile accedervi tramite le API esposte dalla libreria \textit{dart:ui}.
+
+\subsubsection{Framework}
+È lo strato principale dell'architettura.\\
+Il linguaggio utilizzato è \hyperref[sec:Dart]{Dart}.\\
+All'interno sono presenti classi fondamentali di base e servizi di base come l'animazione.\\
+Inoltre è presente il Rendering che permette di gestire il layout attraverso un albero di oggetti che viene visualizzato
+a schermo e che si aggiorna automaticamente.\\
+Sempre all'interno di questo strato sono presenti i Widgets e le due librerie: Material e Cupertino.
+
+\newpage
+
+\subsection{Librerie Material e Cupertino}
+Le due principali librerie di Flutter sono Material e Cupertino.\\
+\begin{figure}[htbp]	
+	\centering
+	\includegraphics[width=14cm]{immagini/librerieCM.png}
+	\caption{Librerie Material e Cupertino}
+	\label{fig:Librerie Material e Cupertino}
+\end{figure}
+\\
+La libreria Material ...\\
+La libreria Cupertino ...
 
 \subsection{Widget}
 \label{sec:Widget}
@@ -197,10 +241,20 @@ Skia
 
 \subsubsection{Stateful widget}
 
-\subsubsection{Librerie Material e Cupertino}
-
 \subsubsection{Principali Widget}
 
-\subsection{Rendering e Layout}
-
 \subsection{Esempi piccole applicazioni realizzate}
+
+\subsubsection{Applicazione base}
+
+\subsubsection{Applicazione 1}
+
+\subsubsection{Applicazione 2}
+
+\subsubsection{Applicazione 3}
+
+\subsubsection{Applicazione 4}
+
+
+
+
