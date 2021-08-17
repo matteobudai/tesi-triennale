@@ -231,19 +231,146 @@ Le due principali librerie di Flutter sono Material e Cupertino.\\
 	\label{fig:Librerie Material e Cupertino}
 \end{figure}
 \\
-La libreria Material ...\\
-La libreria Cupertino ...
+All'interno di Flutter è possibile capire su che piattaforma si sta eseguendo l'applicazione attraverso \textit{'Platform.isIOS'}. Se ritornerà \textit{true} significa che saremo su iOS altrimenti saremo su Android.\\
+La libreria Cupertino permette di implementare un design specifico per le applicazioni iOS.\\
+A differenza della Cupertino la libreria Material permette di implementare un design specifico per le applicazioni Android.
 
 \subsection{Widget}
 \label{sec:Widget}
+Flutter è basato sul principio \textit{'Tutto è un widget'} in quanto l'interfaccia si un programma è composta da diversi widget nidificati.\\
+Ogni widget può essere testo o un pulsante o qualsiasi altro elemento grafico che contiene varie caratteristiche. Tutti questi widget possono influenzare altri widget nella costruzione dell'applicazione.\\
+Il vantaggio principale di questa struttura a widget consiste nella flessibilità, invece lo svantaggio di adottare questa strategia sta nel fatto che tutti i widget sono situati nel codice sorgente del programma e pertanto risulteranno fortemente nidificati.
+\newpage
+Il framework contiene due classi principali di widget:
+\begin{itemize}
+	\item Stateless widget;   
+	\item Stateful widget.
+\end{itemize}
 
+\begin{figure}[htbp]	
+	\centering
+	\includegraphics[width=13cm]{immagini/state.jpeg}
+	\caption{Stateless widget e Stateful widget}
+	\label{fig:Stateless widget e Stateful widget}
+\end{figure}
 \subsubsection{Stateless widget}
+Gli stateless widget non hanno uno stato mutabile e quindi non cambieranno nel tempo neanche in seguito a comportamenti effettuati dall'utente.\\
+Alcuni esempi di questi widget sono: Text, Row, Column e Container.\\
+Per creare uno stateless widger bisogna estendere la classe \textit{SteatelessWidget} che richiedere l'override del metodo \textit{build()}.\\
+Questo metodo viene invocato la prima volta per costruire l'albero dei widget e quando le loro dipendenze cambiano.\\
+Si puo usare uno stateless widget solamente quando i campi dei widget non cambiano nel tempo neanche dopo azioni dell'utente.
+Negli altri casi sarà da utilizzare uno stateful widget.
 
 \subsubsection{Stateful widget}
+Gli stateful widget sono dinamici e mutano nel tempio in base all'interazione dell'utente o in base ad altri fattori.\\
+Alcuni esempi di questi widget sono: Iamge, Form e Checkbox.\\
+Per creare uno stateful widger bisogna estendere la classe \textit{SteatefulWidget}.\\
+Dipende dallo stato dell'oggetto. Infatti ogni volta che si vuole modificare lo stato di un qualsiasi oggetto bisogna chiamare il metodo \textit{setState()} segnalando così al framework di aggiornare l'interfaccia utente chiamando il metodo build e tenendo in considerazione i nuovi stati degli oggetti segnalati nel metodo appena descritto. \\
+Possiamo quindi creare uno stateful widget quando il widget potrebbe cambiare durante il suo ciclo di vita. 
+
+\newpage
 
 \subsubsection{Principali Widget}
+Di seguito saranno spiegati brevemente i widget più comuni e utilizzati in Flutter.
+
+\paragraph{Scaffold}
+Scaffold implementa la struttura del layout visivo.\\
+Contiene principalmente 5 elementi:
+\begin{itemize}
+	\item \textbf{appBar} che viene descritta di seguito;   
+	\item \textbf{body} che rappresenta il corpo situato sotto l'Appbar;
+	\item \textbf{floatingActionButton} che è un bottone che è situato di default in basso a destra;   
+	\item \textbf{drawer} che è un menù laterale visibile dall'utente scorrendo da sinistra a destra o viceversa. All'interno di questo menù sono presenti altri widget che permettono di effettuare diverse azioni;
+	\item \textbf{bottomNavigationBar} che permette di gestire un menù nella parte inferiore dell'applicazione.
+\end{itemize}
+
+\begin{figure}[htbp]	
+	\centering
+	\includegraphics[width=8cm]{immagini/scaffold.png}
+	\caption{Scaffold widget}
+	\label{fig:Scaffold widget}
+\end{figure}
+
+\newpage
+
+\paragraph{AppBar}
+L'AppBar viene gestita da Scaffold ed è solitamente situata nella parte superiore dell'applicazione e espone solitamente anche altri widget che permettono di eseguire una o più azioni.\\
+AppBar ha diverse elementi grafici come elevazione e titolo.
+\begin{figure}[htbp]	
+	\centering
+	\includegraphics[width=8cm]{immagini/appbar.png}
+	\caption{Appbar widget}
+	\label{fig:Appbar widget}
+\end{figure}
+
+\paragraph{Row, Column}
+Il widget Row permette di creare una famiglia di widget in una riga orizzontale invece il widget Column permette di creare sempre una famiglia di widget ma in verticale.\\
+Entrambi non sono scorrevoli quindi nel caso si abbia bisogno di una famiglia di widget scorrevoli bisogna utilizzare il widget \textit{ListView}.
+\begin{figure}[htbp]	
+	\centering
+	\includegraphics[width=10cm]{immagini/rowcolumn.png}
+	\caption{Row e Column widgets}
+	\label{fig:Row e Column widgets}
+\end{figure}
+
+\newpage
+
+\paragraph{Container}
+Il widget Container funge da contenitore all'interno dell'applicazione e può racchiudere altri widget.\\
+Ha un margine, un bordo e un padding di default che possono essere modificati.\\
+Oltre a questi elementi questo widget contiene altri elementi che permettono di decorare la sua area di competenza.
+\begin{figure}[htbp]	
+	\centering
+	\includegraphics[width=8cm]{immagini/container.png}
+	\caption{Container widget}
+	\label{fig:Container widget}
+\end{figure}
+
+\paragraph{Text}
+Il widget Text consente di creare una porzione di testo all'interno dell'applicazione che può essere decorata in base alle diverse esigenze.
+\begin{figure}[htbp]	
+	\centering
+	\includegraphics[width=5cm]{immagini/text.png}
+	\caption{Text widget}
+	\label{fig:Text widget}
+\end{figure}
+
+\paragraph{Image}
+Consente di apportare all'interno dell'applicazione un'immagine.\\
+Ci sono vari formati disponibili ovvero JPEG, PNG, GIF.\\
+I modi per ottenere l'immagine all'interno dell'applicazione sono:
+\begin{itemize}
+	\item \textbf{new Image} che permette di ottenere un'immagine da un  ImageProvider(utilizza imageCache globale per memorizzare nella cache le immagini);   
+	\item \textbf{new Image.asset} che permette di ottenere un'immagine da un AssetBundle(una raccolta di risorse utilizzate dall'applicazione) utilizzando una chiave;
+	\item \textbf{new Image.network} che permette di ottenere un'immagine da un URL;   
+	\item \textbf{new Image.file} che permette di ottenere un'immagine da un File;
+	\item \textbf{new Image.memory} che permette di ottenere un'immagine da un Uint8List.
+\end{itemize}
+
+\paragraph{Icon}
+Il widget Icon permette di inserire icone all'interno dell'applicazione.\\
+Le icone sono quadrate e non sono interattive.
+\begin{figure}[htbp]	
+	\centering
+	\includegraphics[width=5cm]{immagini/icon.png}
+	\caption{Icon widget}
+	\label{fig:Icon widget}
+\end{figure}
+
+\paragraph{ElevatedButton}
+Il widget ElevatedButton permette di inserire un bottone con uno stile di default all'interno dell'applicazione.\\
+Contiene l'elemento \textit{onPressed} che permette di eseguire operazioni quando il bottone sarà premuto. Nel caso onPressed sia uguale a null il bottone sarà disabilitato.
+\begin{figure}[htbp]	
+	\centering
+	\includegraphics[width=8cm]{immagini/button.png}
+	\caption{ElevatedButton widget}
+	\label{fig:ElevatedButton widget}
+\end{figure}
+
+\newpage
 
 \subsection{Esempi piccole applicazioni realizzate}
+Di seguito verranno mostrate alcune applicazioni realizzate seguendo un corso su Udemy per imparare a usare il framework Flutter.
 
 \subsubsection{Applicazione base}
 
