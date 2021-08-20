@@ -12,10 +12,25 @@
 %**************************************************************
 
 \section{Descrizione progetto}
+Sportwill è un'applicazione che permette di gestire gli eventi sportivi. Dopo essersi autenticati al sistema è possibile visualizzare tutte le attività presenti, passate e future. È possibile cercare queste attività utilizzando i vari filtri presenti. Ogni utente può gestire i propri eventi creando nuove attività e modificandole successivamente. Una volta che un utente vuole iniziare un evento dovrà andare sulle specifiche dell'attività e premere sull'apposito bottone per farla iniziare e successivamente la medesima potrà essere messa anche in pausa. Una volta iniziata l'attività, verranno presi i dati relativi alla posizione così da poter far vedere agli altri utenti in una mappa la posizione in tempo reale. Grazie a questa mappa l'utente premendo sull'apposito bottone segnalerà a chi ha fatto partire l'evento che vuole partecipare anche lui e potrà raggiungerlo.
 
-\section{Analisi dei requisiti}
+\newpage
 
 \section{Tecnologie e strumenti}
+All'interno del progetto i file sono suddivisi nel varie sottocartelle in base al loro compito.\\
+Oltre al file main.dart che è il file principale sono presenti altre 4 cartelle che permettono di organizzare meglio il lavoro:
+\begin{itemize}
+	\item \textbf{models}: che permette di gestire le eccezioni;
+	\item \textbf{providers}: che permette di gestire il modello dei dati e fare le varie chiamate al backend;
+	\item \textbf{screens}: che crea tutte le pagine dell'applicazione con gli appositi widgets;
+	\item \textbf{widgets}: che offrono supporto agli screens tramite la creazione di widget.
+\end{itemize}
+\begin{figure}[htbp]	
+	\centering
+	\includegraphics[width=5cm]{immagini/struttura.png}
+	\caption{Struttura progetto}
+	\label{fig:Struttura progetto}
+\end{figure}
 
 \subsection{Flutter e Dart}
 
@@ -47,6 +62,57 @@
 \end{figure}
 
 \subsection{Backend}
+Spring boot e Spring jpa
+
+\begin{figure}[htbp]	
+	\centering
+	\includegraphics[width=4cm]{immagini/springlogo.png}
+	\caption{Logo Spring}
+	\label{fig:Logo Spring}
+\end{figure}
+
+\newpage
+
+\section{Analisi dei requisiti}
+Tipologie di utenti: utente autenticato(come ospite o normale), utente non autenticato, 
+
+Casi d'uso: 
+
+\subsubsection{ UC1 - Visualizzazione mappa}
+\begin{itemize}
+	\item\textbf{Attori Primari:} .
+	\item\textbf{Descrizione:} .
+	\item\textbf{Scenario principale:} .
+	\item\textbf{Precondizione:} .
+	\item\textbf{Postcondizione:} .
+\end{itemize}
+
+\subsubsection{ UC2 - Visualizzazione mappa schermo intero}
+\begin{itemize}
+	\item\textbf{Attori Primari:} .
+	\item\textbf{Descrizione:} .
+	\item\textbf{Scenario principale:} .
+	\item\textbf{Precondizione:} .
+	\item\textbf{Postcondizione:} .
+\end{itemize}
+
+\subsubsection{ UC3 - Filtro base}
+\begin{itemize}
+	\item\textbf{Attori Primari:} .
+	\item\textbf{Descrizione:} .
+	\item\textbf{Scenario principale:} .
+	\item\textbf{Precondizione:} .
+	\item\textbf{Postcondizione:} .
+\end{itemize}
+
+\subsubsection{ UC4 - Filtro avanzato}
+\begin{itemize}
+	\item\textbf{Attori Primari:} .
+	\item\textbf{Descrizione:} .
+	\item\textbf{Scenario principale:} .
+	\item\textbf{Precondizione:} .
+	\item\textbf{Postcondizione:} .
+\end{itemize}
 
 \newpage
 
