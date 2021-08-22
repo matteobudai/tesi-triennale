@@ -7,22 +7,50 @@
 \label{cap:Sportwill}
 %**************************************************************
 
-\intro{In questo capitolo viene descritto il progetto, effettuata un'analisi iniziale dei requisiti per poi definire dettagliatamente come le funzionalità sono state implementate e che tecnologie e strumenti sono stati usati. }\\
+\intro{In questo capitolo viene descritto il progetto, le tecnologie e gli strumenti utilizzati. Viene inoltre effettuata un'analisi dei requisiti per poi definire come le varie funzionalità sono state implementate. }\\
 
 %**************************************************************
 
 \section{Descrizione progetto}
-Sportwill è un'applicazione che permette di gestire gli eventi sportivi. Dopo essersi autenticati al sistema è possibile visualizzare tutte le attività presenti, passate e future. È possibile cercare queste attività utilizzando i vari filtri presenti. Ogni utente può gestire i propri eventi creando nuove attività e modificandole successivamente. Una volta che un utente vuole iniziare un evento dovrà andare sulle specifiche dell'attività e premere sull'apposito bottone per farla iniziare e successivamente la medesima potrà essere messa anche in pausa. Una volta iniziata l'attività, verranno presi i dati relativi alla posizione così da poter far vedere agli altri utenti in una mappa la posizione in tempo reale. Grazie a questa mappa l'utente premendo sull'apposito bottone segnalerà a chi ha fatto partire l'evento che vuole partecipare anche lui e potrà raggiungerlo.
+Sportwill è un'applicazione che permette di gestire eventi sportivi.\\
+Dopo essersi autenticati al sistema si possono visualizzare tutte le attività presenti, passate e future attraverso delle card.\\
+ È possibile cercare queste attività utilizzando vari filtri presenti oppure scorrendo la pagina.\\ 
+ Ogni utente può gestire i propri eventi creando nuove attività e modificandole successivamente nell'apposita sezione.\\
+ Una volta che un utente vuole far partire un nuovo evento dovrà andare sulle specifiche dell'attività e premere sull'apposito bottone per farla iniziare e successivamente la medesima potrà essere messa anche in pausa.\\
+ Una volta iniziata l'attività, verranno presi i dati relativi alla posizione così da poter far vedere agli altri utenti in una mappa la posizione in tempo reale.\\
+ Grazie a questa mappa gli altri utenti premendo sull'apposito bottone segnaleranno a chi ha fatto partire l'evento che vogliono partecipare anche loro così da poterlo raggiungere.
+ 
+ \newpage
+ 
+ Di seguito vengono riportate due immagini dell'applicazione.\\
+ La prima rappresenta la pagina principale dell'applicazione alla quale si arriva dopo essersi autenticati al sistema mentre la seconda rappresenta i dettagli di una nuova attività alla quale posso partecipare premendo sul bottone \textit{Partecipo anche io!}.\\
+ 
+\begin{figure}[htbp]
+	\begin{minipage}[b]{0.47\textwidth}
+		\centering
+		\includegraphics[width=6cm]{immagini/colori.jpeg}
+		\caption{Pagina principale}
+		\label{fig:Pagina principale}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[b]{0.47\textwidth}
+		\centering
+		\includegraphics[width=6cm]{immagini/partecipo.jpeg}
+		\caption{Schermata di partecipazione}
+		\label{fig:Schermata di partecipazione}
+	\end{minipage}
+\end{figure}
+ 
+ \newpage
 
-\newpage
+\subsection{Organizzazione del progetto}
 
-\section{Tecnologie e strumenti}
-All'interno del progetto i file sono suddivisi nel varie sottocartelle in base al loro compito.\\
-Oltre al file main.dart che è il file principale sono presenti altre 4 cartelle che permettono di organizzare meglio il lavoro:
+All'interno del progetto i file sono stati suddivisi nel varie sottocartelle in base al loro compito.\\
+Oltre al file main.dart, che è il file principale dell'applicazione, sono presenti altre 4 cartelle che permettono di organizzare meglio il lavoro:
 \begin{itemize}
 	\item \textbf{models}: che permette di gestire le eccezioni;
 	\item \textbf{providers}: che permette di gestire il modello dei dati e fare le varie chiamate al backend;
-	\item \textbf{screens}: che crea tutte le pagine dell'applicazione con gli appositi widgets;
+	\item \textbf{screens}: che crea tutte le pagine dell'applicazione con gli appositi widget;
 	\item \textbf{widgets}: che offrono supporto agli screens tramite la creazione di widget.
 \end{itemize}
 \begin{figure}[htbp]	
@@ -32,7 +60,9 @@ Oltre al file main.dart che è il file principale sono presenti altre 4 cartelle
 	\label{fig:Struttura progetto}
 \end{figure}
 
-\subsection{Flutter e Dart}
+\newpage
+
+\section{Tecnologie e strumenti}
 
 \subsection{Android Studio}
 
@@ -74,9 +104,9 @@ Spring boot e Spring jpa
 \newpage
 
 \section{Analisi dei requisiti}
-Tipologie di utenti: utente autenticato(come ospite o normale), utente non autenticato, 
+Tipologie di utenti: utente autenticato(come ospite o normale), utente non autenticato.
 
-Casi d'uso: 
+\subsection{Casi d'uso}
 
 \subsubsection{ UC1 - Visualizzazione mappa}
 \begin{itemize}
@@ -116,9 +146,16 @@ Casi d'uso:
 
 \newpage
 
-\section{Implementazioni}
+\subsection{Tracciamento requisti}
+requisiti funzionali e di vincolo
 
-Le implementazioni realizzate durante lo stage sono state: 
+tabelle
+
+\newpage
+
+\section{Implementazioni}
+Oltre al completamento dei requisiti sono state effettuate altre implementazioni.\\
+Nel complesso le funzionalità realizzate durante lo stage sono state: 
 \begin{itemize}
 	\item Logo;
 	\item Filtro di ricerca testo;
@@ -136,6 +173,7 @@ Tutti i servizi sono stati rilasciati su un'apposita repository aziendale su \te
 \subsection{Logo}
 È stato modificato il logo di base di Flutter con quello di Sportwill.\\
 Per  fare ciò è stato inserita l'immagine del logo all'interno della seguente cartella \textit{app/src/main/res/mipmap/}.\\
+In alternativa si poteva definire nel file \textit{pubspec.yaml} il percorso del logo dell'applicazione e poi inserire l'immagine del logo nella cartella appena definita.\\
 
 \begin{figure}[htbp]	
 	\centering
