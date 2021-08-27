@@ -413,5 +413,18 @@ Invece se non avremo filtri applicati l'icona avrà il solito colore bianco.\\
 \newpage
 
 \subsection{Pubblicazione applicazione Play Store}
+Questa è l'ultima attività effettuata che non è stata completata ma solo studiata anche se con molte probabilità in futuro è possibile che l'applicazione venga caricata sul Play Store.\\
+Per caricare l'applicazione sul Play Store è stata studiata la documentazione fornita da Flutter al seguente indirizzo \url{https://flutter.dev/docs/deployment/android}.
+Come prima cosa bisogna lanciare da terminale il seguente comando: \textit{keytool -genkey -v -keystore c:/Users/USER\_NAME/upload-keystore.jks -storetype JKS -keyalg RSA -keysize 2048 -validity 10000 -alias upload}, modificando il percorso.\\
+Successivamente dopo aver fatto tutte le configurazioni necessarie bisognerà gestire il file key.properties con i valori appena configurati.\\
+Dopo aver apportato le modifiche al file key.properties bisognerà modificare anche il file build.gradle come specificato dalla documentazione.\\
+Infine bisognerà, sempre da terminale lanciare il seguente comando: \textit{flutter build appbundle}.\\
+Infine per rilasciare l'applicazione bisognerà creare un account al seguente indirizzo \url{https://play.google.com/console/u/0/signup} pagando 25 dollari e successivamente dopo aver superato tutti i test previsti l'applicazione potrà essere rilasciata sul Play Store.\\
 
+\begin{figure}[htbp]	
+	\centering
+	\includegraphics[width=8cm]{immagini/playstore.jpg}
+	\caption{Play Store}
+	\label{fig:Play Store}
+\end{figure}
 
