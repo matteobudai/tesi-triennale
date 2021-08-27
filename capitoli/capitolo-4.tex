@@ -125,52 +125,149 @@ Tutto queste chiamate erano disponibili su un server gestito dal tutor aziendale
 \newpage
 
 \section{Analisi dei requisiti}
-Tipologie di utenti: utente autenticato(come ospite o normale), utente non autenticato.
+In questa sezione viene descritta l'analisi dei requisti con i  vari casi d'uso individuati e successivamente viene effettuato il tracciamento.
 
 \subsection{Casi d'uso}
+In un primo momento per determinare i casi d'uso sono stati definiti gli attori principali dell'applicazione.
+Tra questi sono state identificate tre tipologie:
+\begin{itemize}
+	\item Utente non autenticato;
+	\item Utente autenticato;
+	\item Utente ospite.
+\end{itemize}
+Successivamente sono stati definiti i quattro casi d'uso:
+\begin{itemize}
+	\item Visualizzazione mappa;
+	\item Visualizzazione mappa schermo intero;
+	\item Filtro base;
+	\item Filtro avanzato.
+\end{itemize}
+
 
 \subsubsection{ UC1 - Visualizzazione mappa}
-\begin{itemize}
-	\item\textbf{Attori Primari:} .
-	\item\textbf{Descrizione:} .
-	\item\textbf{Scenario principale:} .
-	\item\textbf{Precondizione:} .
-	\item\textbf{Postcondizione:} .
-\end{itemize}
+
+	\textbf{Attori Primari:} Utente autenticato e utente ospite.\\
+	\textbf{Descrizione:} L'utente vuole vedere la mappa dell'attività selezionata.\\
+	\textbf{Scenario principale:} L'utente si trova nella schermata principale dell'applicazione e preme sulla card dell'attività a cui è interessato. Se questa attività è iniziata e contiene dati relativi alla posizione verrà mostrata la mappa altrimenti non comparirà tra i dettagli.\\
+	\textbf{Precondizione:} L'utente si trova nella schermata principale dell'applicazione e preme su una card.\\
+	\textbf{Postcondizione:} Se l'attività selezionata conterrà dati relativi alla posizione verrà mostrata una mappa con punto di partenza, percorso svolto e punto attuale o finale.\\
+
 
 \subsubsection{ UC2 - Visualizzazione mappa schermo intero}
-\begin{itemize}
-	\item\textbf{Attori Primari:} .
-	\item\textbf{Descrizione:} .
-	\item\textbf{Scenario principale:} .
-	\item\textbf{Precondizione:} .
-	\item\textbf{Postcondizione:} .
-\end{itemize}
+
+\textbf{Attori Primari:} Utente autenticato e utente ospite.\\
+\textbf{Descrizione:} L'utente vuole vedere la mappa a schermo intero per navigare meglio.\\
+\textbf{Scenario principale:} L'utente sta visualizzando le specifiche di un'attività e tra queste è presente pure la mappa, per poter usare in modo più confortevole la mappa deve poter premere su un bottone che la ingrandisce a schermo intero.\\
+\textbf{Precondizione:} L'utente si trova nelle specifiche di un'attività e tra i dettagli e presente anche la mappa. Una volta individuata preme sul bottone per renderla a schermo intero.\\
+\textbf{Postcondizione:} La mappa viene visualizzata a schermo intero così da facilitarne l'utilizzo.\\
 
 \subsubsection{ UC3 - Filtro base}
-\begin{itemize}
-	\item\textbf{Attori Primari:} .
-	\item\textbf{Descrizione:} .
-	\item\textbf{Scenario principale:} .
-	\item\textbf{Precondizione:} .
-	\item\textbf{Postcondizione:} .
-\end{itemize}
+
+\textbf{Attori Primari:} Utente autenticato e utente ospite.\\
+\textbf{Descrizione:} L'utente cerca un'attività in base al luogo, al titolo e alla persona che l ha creata digitando su una casella di ricerca.\\
+\textbf{Scenario principale:} L'utente si trova nella pagina principale dell'applicazione e vuole cercare l'attività effettuata da un altro utente. Per cercarla basterà che inizierà a digitare il nome o il cognome della persona desiderata e compariranno solo le card che contengono quanto appena scritto.\\
+\textbf{Precondizione:} L'utente si trova nella pagina principale dell'applicazione e inizia a scrivere nella casella di ricerca.\\
+\textbf{Postcondizione:} Vengono visualizzate solo le card che contengono nel titolo, nel nome, nel cognome o nel titolo quello scritto dall'utente.\\
 
 \subsubsection{ UC4 - Filtro avanzato}
-\begin{itemize}
-	\item\textbf{Attori Primari:} .
-	\item\textbf{Descrizione:} .
-	\item\textbf{Scenario principale:} .
-	\item\textbf{Precondizione:} .
-	\item\textbf{Postcondizione:} .
-\end{itemize}
+
+\textbf{Attori Primari:} Utente autenticato e utente ospite.\\
+\textbf{Descrizione:} L'utente si trova nella pagina principale dell'applicazione e aprendo il menù dei filtri può applicarli in base alle sue esigenze.\\
+\textbf{Scenario principale:} L'utente apre il menù dei filtri e seleziona la data di inizio o lo sport che gli interessano e preme sull'icona del check per applicarli così da vedere solo le card con quella tipologia di sport e apartire da quella data.\\
+\textbf{Precondizione:} L'utente si trova nel menù dei filtri, riempa alcuni campi e preme sull'icona del check.\\
+\textbf{Postcondizione:} L'utente visualizza solo le card che rispettano i valori messi nel filtro in precedenza. Per aiutare l'utente e far capire che il filtro è stato applicato, l'icona che porta al menù dei filtri cambia colore in verde.\\
 
 \newpage
 
 \subsection{Tracciamento requisti}
-requisiti funzionali e di vincolo
+I requisiti individuati sono tutti fondamentali e obbligatori e possono essere:
+\begin{itemize}
+	\item \textbf{Funzionali}: legati alle funzionalità offerte dal sistema;
+	\item \textbf{Qualitativi}: rappresentanti standard e metriche da seguire per garantire la qualità del sistema;
+	\item \textbf{Di Vincolo}: dipendenti da fattori esterni o di dominio.
+\end{itemize}
+Per ogni requisito delle tabelle sottostanti è stata decisa la seguente struttura: 
+\begin{itemize}
+	\item\textbf{Requisito:} R[Tipologia][Identificativo];
+	\item\textbf{Descrizione:} descrizione breve ma completa del requisito, meno ambigua possibile;
+	\item\textbf{Fonti:} ogni requisito può derivare dalle seguenti fonti:
+	\begin{itemize}
+		\item Azienda: si tratta di un requisito individuato con l'azienda;
+		\item Caso d'uso: si tratta di un requisito estrapolato dai casi d'uso individuati.
+	\end{itemize}
+\end{itemize}
 
-tabelle
+\subsubsection{Requisiti funzionali}
+
+\begin{center}
+	\begin{table}[h!]
+		
+		\label{tab:Requisiti funzionali}
+		\begin{tabularx}{\textwidth}{|c|p{8cm}|p{2.1cm}|}
+			
+			\hline
+			\textbf{Requisito} & \centering\textbf{Descrizione} & \textbf{Fonti}  \\\hline
+			
+			R1F1 & Se ci sono coordinate relative alla posizione per un'attività deve essere possibile visualizzare la mappa  & UC1\\
+			\hline	
+			R1F2 &Deve essere possibile visualizzare la mappa a schermo intero. & UC2\\
+			\hline
+			R1F3& Deve essere possibile cercare le attività per titolo, luogo, nome e cognome.	& UC3	\\
+			\hline	
+			R1F4& Deve essere possibile applicare filtri avanzati all'attività che comprendono il tipo di sport, la data di inizio, di fine e se si riferiscono ad attività che ho creato io.	& UC4	\\
+			\hline		
+		\end{tabularx}
+		\vspace{0.3cm}
+		\caption{Requisiti funzionali}
+	\end{table}
+\end{center}
+
+\newpage
+
+\subsubsection{Requisiti qualitativi}
+
+\begin{center}
+	\begin{table}[h!]
+		
+		\label{tab:Requisiti qualitativi}
+		\begin{tabularx}{\textwidth}{|c|p{8cm}|p{2.1cm}|}
+			
+			\hline
+			\textbf{Requisito} & \centering\textbf{Descrizione} & \textbf{Fonti}  \\\hline
+			
+			R1Q1 &Il codice scritto dovrà essere versionabile tramite Git.  & Azienda\\
+			\hline	
+			R1Q2 &Il repository utilizzato sarà quello presente su GitLab. & Azienda\\
+			\hline
+			R1Q3& Per implementare le funzionalità bisognerà usare il framework Flutter con linguaggio Dart.	& Azienda	\\
+			\hline		
+		\end{tabularx}
+		\vspace{0.3cm}
+		\caption{Requisiti qualitativi}
+	\end{table}
+\end{center}
+
+\subsubsection{Requisiti di vincolo}
+
+\begin{center}
+	\begin{table}[h!]
+		
+		\label{tab:Requisiti di vincolo}
+		\begin{tabularx}{\textwidth}{|c|p{8cm}|p{2.1cm}|}
+			
+			\hline
+			\textbf{Requisito} & \centering\textbf{Descrizione} & \textbf{Fonti}  \\\hline
+			
+				R1V1 & Tutti i dati dovranno essere memorizzati nel back-end.  & Azienda\\
+				\hline
+				R1V2 & Per le chiamate verrà utilizzato un server fornito dall'azienda.  & Azienda\\
+			\hline		
+		\end{tabularx}
+		\vspace{0.3cm}
+		\caption{Requisiti di vincolo}
+	\end{table}
+\end{center}
+
 
 \newpage
 
@@ -207,7 +304,7 @@ In alternativa si poteva definire nel file \textit{pubspec.yaml} il percorso del
 
 \subsection{Filtro di ricerca testo}
 All'interno della pagina principale dell'applicazione ovvero la pagina \textit{uscite\_overview\_screen.dart} è stato aggiunto un widget che permette di ricercare le varie card in base all'evento, al luogo o alla persona.\\
-Digitando nella barra di ricerca quindi si potranno ricercare solo le card a cui si è interessati.\\
+Digitando nella barra di ricerca si potranno ricercare solo le card a cui si è interessati.\\
 Per fare ciò è stato inserita una funzione chiamata \textit{ricerca()} che ritorna una TextField come Widget nel file \textit{uscite\_overview\_screen.dart}.\\
 
 \begin{figure}[htbp]	
@@ -258,7 +355,7 @@ Per gestire la mappa sono stati creati due providers:
 	\item locations.dart: che permette di chiamare il backend per ottenere i vari valori da visualizzare nella mappa.
 \end{itemize}
 La mappa viene creata nel file \textit{dettaglio\_screen.dart} e viene mostrata solo se c'è almeno una posizione per l'attività selezionata.\\
-Per visualizzare la mappa viene usato Leaflet e viene creato un array con tutte le posizioni che vengono poi disegnate sulla mappa mettendo i marker alla prima posizione e all'ultima in ordine temporale.\\
+Per visualizzare la mappa viene usato Leaflet e viene creato un array con tutte le posizioni. Queste posizioni vengono poi disegnate sulla mappa mettendo i marker alla prima posizione e all'ultima in ordine temporale.\\
 
 \begin{figure}[htbp]	
 	\centering
@@ -283,9 +380,10 @@ Per evitare che il Timer venisse ricostruito ogni volta è stato usato un valore
 \newpage
 
 \subsection{Mappa schermo intero}
-Per fare in modo che la mappa fosse più utilizzabile dall'utente è stata creata la possibilità di vederla a schermo intero.
-Per fare ciò è stato usato un valore booleano, ovvero \textit{ingradisci} inizialmente uguale a false, che se settato a true permetteva di vedere nello schermo solo la mappa.\\
-Cliccando sul bottone \textit{schermo intero} veniva settato questo valore a true e veniva ricostruita la pagina invece premendo sull'icona con la croce veniva settato il valore a false ricostruendo sempre la pagina.\\
+Per fare in modo che la mappa fosse più usufruibile dall'utente è stata creata la possibilità di vederla a schermo intero.
+Per fare ciò è stato usato un valore booleano, ovvero \textit{ingradisci}, inizialmente uguale a false, che se settato a true permetteva di vedere nello schermo solo la mappa.\\
+Cliccando sul bottone \textit{schermo intero} veniva infatti  settato questo valore a true e istantaneamente veniva ricostruita la pagina con la mappa a schermo intero.\\
+Una volta che la mappa era a schermo intero, premendo sull'icona con la croce veniva settato il booleano a false ricostruendo sempre la pagina come in precedenza.\\
 
 \begin{figure}[htbp]	
 	\centering
