@@ -7,12 +7,12 @@
 \label{cap:Framework Flutter e linguaggio Dart}
 %**************************************************************
 
-\intro{In questo capitolo viene inizialmente introdotto come un'applicazione mobile può essere sviluppata per poi concentrarsi su Flutter e tutte le sue componenti. Infine saranno mostrate come esempio alcune piccole applicazioni realizzate per imparare a utilizzare il framework Flutter.}\\
+\intro{In questo capitolo, viene introdotto come un'applicazione mobile può essere sviluppata per poi concentrarsi su Flutter e tutte le sue componenti. Infine saranno mostrate come esempio alcune piccole applicazioni realizzate per imparare a utilizzare il framework Flutter.}\\
 
 %**************************************************************
 \section{Sviluppo applicazioni mobile}
-Nel quotidiano, non solo in Italia ma in tutto il mondo, l'uso dello smartphone è in costante aumento.
-Mentre fino a qualche anno fa il cellulare veniva usato solo per telefonare o mandare qualche messaggio, oggi lo smartphone viene utilizzato in qualsiasi ambito: lavoro, comunicare, divertirsi, video, musica o svago.
+Nel quotidiano, non solo in Italia ma in tutto il mondo, l'uso dello smartphone \cite{statistiche} è in costante aumento. \\
+Mentre fino a qualche anno fa il cellulare veniva usato solo per telefonare o mandare qualche messaggio, oggi lo smartphone viene utilizzato in qualsiasi ambito: lavoro, comunicare, divertirsi, video, musica o svago. \\
 Ormai nei cellulari sono presenti applicazioni per qualsiasi esigenza ed è proprio per questo che chi sviluppa applicazioni ha dovuto considerare lo sviluppo per mobile come fattore primario.\\
 	\begin{figure}[htbp]	
 	\centering
@@ -21,18 +21,19 @@ Ormai nei cellulari sono presenti applicazioni per qualsiasi esigenza ed è prop
 	\label{fig:Sviluppo applicazioni mobile}
 \end{figure}
 \\
-Esistono quattro diversi approcci di implementazione:
+Esistono quattro diversi approcci di implementazione: 
 \begin{itemize}
 	\item App native; 
 	\item Web app; 
 	\item App Ibride Web View Wrapper; 
 	\item App Ibride Compile to Native.
 \end{itemize}
+\cite{sviluppo,differenza,apptonative}
 
 \subsection{App native}
-Il metodo nativo da la possibilità all'applicazione di integrarsi con la parte hardware del dispositivo, sfruttando così tutte le funzionalità del sistema operativo.
-Le app native vengono realizzate utilizzando gli strumenti di sviluppo software e la documentazione fornita dai produttori del sistema operativo per il quale si ha l'intenzione di sviluppare.
-Questo metodo è scelto sopratutto degli sviluppatori attenti alle prestazioni e alle performance dell'applicazione.
+Il metodo nativo \cite{differenza,apptonative} da la possibilità all'applicazione di integrarsi con la parte hardware del dispositivo, sfruttando così tutte le funzionalità del sistema operativo. \\
+Le app native vengono realizzate utilizzando gli strumenti di sviluppo software e la documentazione fornita dai produttori del sistema operativo per il quale si ha l'intenzione di sviluppare.\\
+Questo metodo è scelto sopratutto degli sviluppatori attenti alle prestazioni e alle performance dell'applicazione.\\
 I vantaggi principali di sviluppare App native sono:
 \begin{itemize}
 	\item Maggiore velocità, affidabilità e reattività;
@@ -46,7 +47,7 @@ Attualmente i sistemi operativi più utilizzati sono:
 	\item iOS; 
 	\item Windows Phone.\\
 \end{itemize}
-
+\cite{sviluppo}
 
 \subsubsection{Android}
 \begin{figure}[htbp]	
@@ -55,8 +56,8 @@ Attualmente i sistemi operativi più utilizzati sono:
 	\caption{Logo Android}
 	\label{fig:Logo Android}
 \end{figure}
- Android è il sistema operativo più utilizzato e diffuso. È stato sviluppato da Google ed è stato scelto da multinazionali importanti come Samsung, Huawei e Amazon per il funzionamento dei loro dispositivi.
- Il linguaggio per sviluppare un'applicazione Android è Java. Negli ultimi anni è nato anche Kotlin che è un altro linguaggio ufficiale per la progettazione di applicazioni Android che è più moderno, meno complesso ma performante e compatibile con l'ambiente Android quanto Java.
+ Android è il sistema operativo più utilizzato e diffuso. È stato sviluppato da Google ed è stato scelto da multinazionali importanti come Samsung, Huawei e Amazon per il funzionamento dei loro dispositivi.\\
+ Il linguaggio per sviluppare un'applicazione Android è Java. Negli ultimi anni è nato anche Kotlin, che è un altro linguaggio ufficiale per la progettazione di applicazioni Android più moderno, meno complesso ma performante e compatibile con l'ambiente Android quanto Java.\\
  \newpage
 
  \subsubsection{iOS}
@@ -66,9 +67,9 @@ Attualmente i sistemi operativi più utilizzati sono:
  	\caption{Logo iOS}
  	\label{fig:Logo iOS}
  \end{figure}
- iOS è il sistema operativo sviluppato da Apple per dispositivi iPhone, iPod touch e iPad.
- Per un lungo periodo il linguaggio per sviluppare un'applicazione iOS è stato Objective-C che deriva da C e C++. 
- Per aumentare la produttività Apple ha lanciato un linguaggio di più alto livello ovvero Swift. Swift è veloce, più leggibile e meno prolisso. Nonostante ciò, Objective-C viene ancora preferito quando si sta lavorando più a basso livello.
+ iOS è il sistema operativo sviluppato da Apple per dispositivi iPhone, iPod touch e iPad.\\
+ Per un lungo periodo il linguaggio per sviluppare un'applicazione iOS è stato Objective-C che deriva da C e C++. \\
+ Per aumentare la produttività, Apple ha lanciato un linguaggio di più alto livello ovvero Swift. Swift è veloce, leggibile e poco prolisso. Nonostante ciò, Objective-C viene ancora preferito quando si sta lavorando più a basso livello.\\
 
  \subsubsection{Windows Phone}
  \begin{figure}[htbp]	
@@ -77,13 +78,14 @@ Attualmente i sistemi operativi più utilizzati sono:
  	\caption{Logo Windows Phone}
  	\label{fig:Logo Windows Phone}
  \end{figure}
-Windows Phone è il sistema operativo sviluppato da Microsoft.
-Il linguaggio utilizzato per sviluppare un'applicazione Windows Phone è C\# che è un linguaggio semi-compilato orientato agli oggetti.
-Con Android e iOS in ambito mobile non c'è paragone. Invece per quanto riguarda sistemi desktop Windows risulta una delle migliori.\\
+Windows Phone è il sistema operativo sviluppato da Microsoft.\\
+Il linguaggio utilizzato per sviluppare un'applicazione Windows Phone è C\#, che è un linguaggio semi-compilato orientato agli oggetti.\\
+Con Android e iOS in ambito mobile non c'è paragone. Invece per quanto riguarda sistemi desktop, Windows risulta una delle migliori.\\
  
 \subsection{Web app}
-Una web app è un'applicazione che funziona come un sito web adattandosi al dispositivo utilizzato.
-Queste applicazioni non necessitano di essere installate sugli smartphone e quindi non andranno ad aumentare la memoria utilizzata nel dispositivo. Inoltre non possono essere nemmeno pubblicate sugli Store e quindi non godono di questa enorme visibilità.
+Una web app \cite{differenza,apptonative} è un'applicazione che funziona come un sito web adattandosi al dispositivo utilizzato.\\
+Queste applicazioni non necessitano di essere installate sugli smartphone e quindi non andranno ad aumentare la memoria utilizzata nel dispositivo.\\
+ Inoltre non possono essere pubblicate sugli Store e quindi non godono di un enorme visibilità.\\
 I principali framework e librerie per creare una web app sono:
 \begin{itemize}
 	\item Angular; 
@@ -92,13 +94,16 @@ I principali framework e librerie per creare una web app sono:
 \end{itemize}
 I vantaggi di sviluppare una web app sono:
 \begin{itemize}
-	\item Scritte con Markup HTML;
-	\item non essendo pubblicate sul Market non devono essere sottoposte al processo di approvazione; 
+	\item Scrittura con Markup HTML;
+	\item Non essendo pubblicate sul Market non devono essere sottoposte al processo di approvazione; 
 	\item Minor tempo di sviluppo.
 \end{itemize}
+
 \newpage
+
 \subsection{App Ibride Web View Wrapper}
-Questo tipo di metodo permette di creare applicazioni senza alcuna conversione del codice in base al sistema operativo. In pratica l'applicazione rileva inizialmente il sistema operativo utilizzato e successivamente imita l'aspetto dell'interfaccia utente utilizzando CSS, Sass...\\
+Questo tipo di metodo \cite{differenza,apptonative} permette di creare applicazioni senza alcuna conversione del codice in base al sistema operativo.\\
+ In pratica l'applicazione rileva inizialmente il sistema operativo utilizzato e successivamente imita l'aspetto dell'interfaccia utente, utilizzando CSS, Sass...\\
 Le piattaforme più usate sono:
 \begin{itemize}
 \item Ionic; 
@@ -111,7 +116,7 @@ I vantaggi principali di Ionic e delle App Ibride Web View Wrapper sono:
 	\item Ionic utilizza JavaScript e fornisce un supporto per Angular;
 	\item Addatamento automatico in base alla piattaforma; 
 \end{itemize}
-Lo svantaggio principale di questo tipo di applicazioni sta in termini di velocità di calcolo e quindi avranno prestazioni inferiori a quelle compilate in nativo.\\
+Lo svantaggio principale di questo tipo di applicazioni sta in termini di velocità di calcolo e questo comporterà prestazioni inferiori alle applicazione compilate in nativo.\\
 
 \subsection{App Ibride Compile to Native}
 Le applicazioni ibride che compilano in nativo utilizzano un unico linguaggio di programmazione per la scrittura del codice. Una volta compilato i componenti dell'interfaccia utente del codice vengono convertiti nei componenti dell'interfaccia utente nativi senza bisogno di configurazioni particolari.\\
@@ -136,7 +141,7 @@ I vantaggi principali di utilizzare piattaforme che compilano in nativo sono:
 	\caption{Logo Flutter}
 	\label{fig:Logo Flutter}
 \end{figure}
-Flutter è un framework nato abbastanza di recente per lo sviluppo di applicazioni per diverse piattaforme.\\
+Flutter \cite{flutterprogramma} è un framework nato abbastanza di recente per lo sviluppo di applicazioni per diverse piattaforme.\\
 È stato ideato da Google come progetto open source e pubblicato ufficialmente per la prima volta a dicembre del 2018 nella versione 1.0 all'evento Flutter Live.\\
 Il 3 marzo 2021 è stata rilasciata la versione 2.0 che consente agli sviluppatori di generare in maniera stabile applicazioni multipiattaforma.\\
 Flutter offre una vasta serie di librerie di elementi di interfaccia utente e combina la facilità di sviluppo con prestazioni simili alle prestazioni native, mantenendo una corretta distinzione visiva tra le diverse piattaforme senza che il programmatore debba prestare particolari attenzioni.
@@ -157,7 +162,7 @@ I vantaggi di utilizzare Flutter sono:
 	\item Un codebase per tutte le piattaforme; 
 	\item Utilizzo di \hyperref[sec:Dart]{Dart} che è un linguaggio facile da apprendere;  
 	\item Più facile da sviluppare applicazioni con Flutter che quindi entrano sul mercato più in fretta;
-	\item Si basa sul principio 'Tutto è un Widget' che sarà spiegato nella \hyperref[sec:Widget]{sezione Widget};
+	\item Si basa sul principio \textit{'Tutto è un Widget'} che sarà spiegato nella \hyperref[sec:Widget]{sezione Widget};
 	\item Basso consumo di risorse;
 	\item Esecuzione performante delle app native su smartphone;
 	\item Ottima interfaccia utente che può essere anche personalizzata;
@@ -171,7 +176,7 @@ Invece tra gli svantaggi possiamo citare che:
 \end{itemize}
 \subsection{Dart}
 \label{sec:Dart}
-Dart è un linguaggio di programmazione sviluppato da Google e presentato per la prima volta il 10 ottobre del 2011 alla conferenza 'GOTO Aarhus 2011'.\\
+Dart \cite{dart,dartstoria} è un linguaggio di programmazione sviluppato da Google e presentato per la prima volta il 10 ottobre del 2011 alla conferenza 'GOTO Aarhus 2011'.\\
 Lo scopo principale è quello di sostituire JavaScript per lo sviluppo delle applicazioni.\\
 Dart costituisce la base di Flutter e inoltre supporta molte attività di sviluppo di base come la formattazione, l'analisi, il test del codice...\\
 Dart è type-safe. Inoltre i valori in Dart non possono essere null tranne nei casi in cui viene indicato che questi valori possono esserlo, così da evitare possibili errori nel codice.\\
@@ -246,6 +251,7 @@ Il framework contiene due classi principali di widget:
 	\item Stateless widget;   
 	\item Stateful widget.
 \end{itemize}
+\cite{state}
 
 \begin{figure}[htbp]	
 	\centering
@@ -274,7 +280,7 @@ Possiamo quindi creare uno stateful widget quando il widget potrebbe cambiare du
 Di seguito saranno spiegati brevemente i widget più comuni e utilizzati in Flutter.
 
 \paragraph{Scaffold}
-Scaffold implementa la struttura del layout visivo.\\
+Scaffold \cite{scaffold} implementa la struttura del layout visivo.\\
 Contiene principalmente 5 elementi:
 \begin{itemize}
 	\item \textbf{appBar} che viene descritta di seguito;   
@@ -370,7 +376,7 @@ Contiene l'elemento \textit{onPressed} che permette di eseguire operazioni quand
 \newpage
 
 \subsection{Esempi piccole applicazioni realizzate}
-Di seguito verranno mostrate alcune applicazioni realizzate seguendo un corso su Udemy per imparare a usare il framework Flutter.
+Di seguito verranno mostrate alcune applicazioni realizzate seguendo un corso su Udemy \cite{corso} per imparare a usare il framework Flutter.
 
 \subsubsection{Applicazione base}
 Dopo aver effettuato la giusta configurazione e scaricato tutto il necessario, per creare la prima applicazione di base messa a disposizione da Flutter basterà digitare sul terminale il comando: \textit{flutter create "nome\_applicazione"}.\\
