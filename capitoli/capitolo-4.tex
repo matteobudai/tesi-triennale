@@ -3,26 +3,30 @@
 % !TEX root = ../tesi.tex
 
 %**************************************************************
-\chapter{Sportwill}
+\chapter{Realizzazione dell'applicazione Sportwill}
 \label{cap:Sportwill}
 %**************************************************************
 
-\intro{In questo capitolo viene descritto il progetto, le tecnologie e gli strumenti utilizzati. Viene inoltre effettuata un'analisi dei requisiti per poi definire come le varie funzionalità sono state implementate. }\\
+\intro{In questo capitolo viene descritto il progetto di stage e il prototipo esistente, le tecnologie e gli strumenti utilizzati. Viene inoltre effettuata un'analisi dei requisiti per poi definire come le varie funzionalità sono state implementate. }\\
 
 %**************************************************************
 
-\section{Descrizione progetto}
+\section{Introduzione all'applicazione Sportwill}
 Sportwill è un'applicazione che permette di gestire eventi sportivi.\\
-Dopo essersi autenticati al sistema si possono visualizzare tutte le attività presenti, passate e future attraverso delle card.\\
+Come detto nel Capitolo 2, prima di iniziare il progetto di stage esisteva già una prima versione dell'applicazione realizzata da uno stagista in passato.
+Questa primo prototipo conteneva solo alcune delle funzionalità necessarie.
+Infatti erano già presenti le pagine di login e registrazioni, la pagina principale dove vengono visualizzate le card \cite{card}, la pagina con le specifiche dell'attività selezionata dove però mancavano alcuni dati importanti e le pagine di creazione e modifica di un'attività.
+ Tutte le altre implementazioni, fondamentali per completare l'applicazione, sono state realizzate durante il periodo di stage.
+Attualmente l'applicazione è completa e dopo essersi autenticati nel sistema si possono visualizzare tutte le attività presenti, passate e future attraverso delle card.\\
  È possibile cercare queste attività utilizzando i vari filtri presenti oppure scorrendo la pagina.\\ 
  Ogni utente può gestire i propri eventi, creando nuove attività e modificandole successivamente nell'apposita sezione.\\
  Quando un utente vuole far partire un nuovo evento dovrà andare sulle specifiche dell'attività e premere sull'apposito bottone per farla iniziare e successivamente la medesima potrà essere messa anche in pausa.\\
- Una volta iniziata l'attività, verranno presi i dati relativi alla posizione così da poter far vedere in una mappa la posizione in tempo reale.\\
+ Una volta iniziata l'attività, verranno presi i dati relativi alla posizione così da poter far vedere in una mappa la posizione in tempo reale.
  Grazie a questa mappa, gli altri utenti premendo sull'apposito bottone segnaleranno a chi ha fatto partire l'evento che vogliono partecipare anche loro così da poterlo raggiungere.
  
  \newpage
  
- Di seguito vengono riportate due immagini dell'applicazione.\\
+ Di seguito, in Figura 4.1 e in Figura 4.2, vengono riportate due immagini dell'applicazione esistente.\\
  La prima rappresenta la pagina principale dell'applicazione alla quale si arriva dopo essersi autenticati al sistema mentre la seconda rappresenta i dettagli di una nuova attività alla quale posso partecipare premendo sul bottone \textit{Partecipo anche io!}.\\
  
 \begin{figure}[htbp]
@@ -43,15 +47,15 @@ Dopo essersi autenticati al sistema si possono visualizzare tutte le attività p
  
  \newpage
 
-\subsection{Organizzazione del progetto}
+\section{Struttura dei file del progetto Sportwill}
 
-All'interno del progetto i file sono stati suddivisi nelle varie sottocartelle in base al loro compito.\\
+In base alla struttura già presente in passato e in accordo con il tutor Fabio Pallaro, i file, attualmente, sono stati suddivisi nelle varie sottocartelle in base al loro compito (vedi Figura 4.3).\\
 Oltre al file main.dart, che è il file principale dell'applicazione, sono presenti altre 4 cartelle che permettono di organizzare meglio il lavoro:
 \begin{itemize}
-	\item \textbf{models}: che permette di gestire le eccezioni;
-	\item \textbf{providers}: che permette di gestire il modello dei dati e fare le varie chiamate al backend;
-	\item \textbf{screens}: che crea tutte le pagine dell'applicazione con gli appositi widget;
-	\item \textbf{widgets}: che offrono supporto agli screens tramite la creazione di widget.
+	\item \textbf{screens}: crea tutte le pagine dell'applicazione con gli appositi widget;
+	\item \textbf{widgets}: offrono supporto agli screens tramite la creazione di widget;
+	\item \textbf{providers}: permette di gestire il modello dei dati e fare le varie chiamate al backend;
+	\item \textbf{models}: contiene i file che permettono di gestire le eccezioni.
 \end{itemize}
 \begin{figure}[htbp]	
 	\centering
@@ -63,7 +67,7 @@ Oltre al file main.dart, che è il file principale dell'applicazione, sono prese
 \newpage
 
 \section{Tecnologie e strumenti}
-Per svolgere il progetto, tralasciando lo studio del framework Flutter e del linguaggio Dart che vengono descritti nel capitolo precedente, è stato necessario utilizzare altri strumenti e tecnologie.\\
+Per svolgere tutte le implementazioni richieste per l'applicazione Sportwill, oltre allo studio del framework Flutter e al linguaggio Dart, che vengono descritti nel precedente Capitolo 3, è stato necessario utilizzare altri strumenti e tecnologie.\\
 Tra questi i principali sono:
 \begin{itemize}
 	\item Android Studio;
@@ -73,9 +77,9 @@ Tra questi i principali sono:
 \end{itemize}
 
 \subsection{Android Studio}
-Android Studio è un IDE per lo sviluppo per la piattaforma Android.\\
+Android Studio, il cui logo è riportato in Figura 4.4, è un IDE per lo sviluppo per la piattaforma Android \cite{android}.
 Questo IDE, già utilizzato da me in precedenza, è stato configurato correttamente installando i plugin per Flutter e Dart necessari.\\
-Android Studio mi ha permesso inoltre di installare e configurare il cellulare così da poter vedere l'applicazione in modo realistico sul mio dispositivo fisico.\\
+Android Studio permette inoltre di installare e configurare il cellulare così da poter vedere l'applicazione in modo realistico su un dispositivo fisico.\\
 È molto valido anche perchè fornisce vari dispositivi virtuali su cui testare l'applicazione.
 
 \begin{figure}[htbp]	
@@ -86,10 +90,10 @@ Android Studio mi ha permesso inoltre di installare e configurare il cellulare c
 \end{figure}
 
 \subsection{GitLab}
-GitLab è una piattaforma web open source che permette la gestione di repository Git.\\
+GitLab, il cui logo è riportato in Figura 4.5, è una piattaforma web open source che permette la gestione di repository Git.\\
 Grazie a GitLab è possibile lavorare parallelamente
 ad altre persone sullo stesso progetto senza generare conflitti.\\
-All'interno della repository presente su GitLab al seguente indirizzo \url{https://gitlab.synclab.it/padovaformazione/sportwill/} viene gestito tutto il progetto ovvero il backend, l'applicazione mobile e la webapp.\\
+All'interno della repository presente su GitLab \cite{repo}, viene gestito tutto il progetto per realizzare l'applicazione Sportwill ovvero il backend, l'applicazione mobile e la webapp.\\
 
 \begin{figure}[htbp]	
 	\centering
@@ -100,8 +104,8 @@ All'interno della repository presente su GitLab al seguente indirizzo \url{https
 \newpage
 
 \subsection{Database}
-Il database utilizzato per l'applicazione è DBeaver che è gratuito e scaricabile alla seguente pagina \url{https://dbeaver.io/download/}.\\
-L'utilizzo del database è stato fondamentale per testare che tutto andasse nella maniera prevista.\\
+Il database utilizzato per l'applicazione è DBeaver, il cui logo è riportato in Figura 4.6, che è scaricabile gratuitamente \cite{downdb}.\\
+Oltre a contenere tutti i dati e poter vedere il loro cambiamento in tempo reale, l'utilizzo del database è stato fondamentale per testare che tutto andasse nella maniera prevista verificando che i medesimi si modificassero nei tempi e modi previsti.\\
 
 \begin{figure}[htbp]	
 	\centering
@@ -111,9 +115,9 @@ L'utilizzo del database è stato fondamentale per testare che tutto andasse nell
 \end{figure}
 
 \subsection{Backend}
-Per gestire i dati sono state fatte delle chiamate al backend.\\
-Il backend comprendeva principalmente i linguaggi Spring boot e Spring jpa ed è stato gestito da altri stagisti con il quale sono stato in stretto contatto per organizzare le varie chiamate necessarie, così da definire gli indirizzi e i valori attesi.\\
-Tutte queste chiamate erano disponibili su un server gestito dal tutor aziendale Fabio Pallaro.\\
+Per gestire i dati sono state fatte delle chiamate al backend, che permette di estrarre e elaborare i dati presenti nel database passandoli poi al frontend, ovvero a chi è responsabile di ricevere i dati e poi farli visualizzare graficamente.\\
+Il backend comprende principalmente i linguaggi Spring boot e Spring jpa, il cui logo è riportato in Figura 4.7, ed è stato gestito da altri stagisti con la quale sono stato in stretto contatto per organizzare le varie chiamate necessarie, così da definire gli indirizzi e i valori attesi.
+Tutte queste chiamate sono disponibili su un server gestito dal tutor aziendale Fabio Pallaro.\\
 
 \begin{figure}[htbp]	
 	\centering
@@ -125,7 +129,7 @@ Tutte queste chiamate erano disponibili su un server gestito dal tutor aziendale
 \newpage
 
 \section{Analisi dei requisiti}
-In questa sezione viene descritta l'analisi dei requisti con i  vari casi d'uso individuati e successivamente viene effettuato il tracciamento.
+In questa sezione viene descritta l'analisi dei requisti con i  vari casi d'uso individuati durante lo studio del prototipo esistente e dopo vari confronti con il tutor Fabio Pallaro. Successivamente ne viene effettuato il tracciamento.
 
 \subsection{Casi d'uso}
 In un primo momento, per determinare i casi d'uso, sono stati definiti gli attori principali dell'applicazione.
@@ -272,39 +276,28 @@ Per ogni requisito delle tabelle sottostanti è stata decisa la seguente struttu
 \newpage
 
 \section{Implementazioni}
-Oltre al completamento dei requisiti sono state effettuate altre implementazioni.\\
-Nel complesso le funzionalità realizzate durante lo stage sono state: 
+Grazie all'analisi dei requisiti sono state individuate le seguenti implementazioni da realizzare:
 \begin{itemize}
-	\item Logo;
 	\item Filtro di ricerca testo;
-	\item Pagina Modifica e campi obbligatori;
 	\item Mappa percorso;
-	\item Aggiornamento automatico mappa;
 	\item Mappa schermo intero;
-	\item Colori;
-	\item Pagina Modifica;
+	\item Filtro avanzato di ricerca attività.
+\end{itemize}
+Oltre al completamento dei requisiti, sono state realizzate anche le seguenti funzionalità: 
+\begin{itemize}
+	\item Aggiornamento automatico mappa;
+	\item Logo;
+	\item Campi obbligatori e pagina modifica e crea;
 	\item Eliminazione, Modifica e Aggiunta di un'attività;
-	\item Filtro avanzato di ricerca attività;
+	\item Colori;
 	\item Pubblicazione applicazione Play Store.
 \end{itemize}
-Tutti i servizi sono stati rilasciati su un'apposita repository aziendale su \textit{GitLab}.
-
-\subsection{Logo}
-È stato modificato il logo di base di Flutter con quello di Sportwill.\\
-Per  fare ciò è stato inserita l'immagine del logo all'interno della seguente cartella \textit{app/src/main/res/mipmap/}.\\
-In alternativa si poteva definire nel file \textit{pubspec.yaml} il percorso del logo dell'applicazione e poi inserire l'immagine del logo nella cartella appena definita.\\
-
-\begin{figure}[htbp]	
-	\centering
-	\includegraphics[width=6cm]{immagini/logosportwill.png}
-	\caption{Logo Sportwill}
-	\label{fig:Logo Sportwill}
-\end{figure}
+Tutti i servizi sono stati rilasciati su un'apposita repository aziendale su \textit{GitLab} \cite{repo}.
 
 \newpage
 
 \subsection{Filtro di ricerca testo}
-All'interno della pagina principale dell'applicazione ovvero la pagina \textit{uscite\_overview\_screen.dart} è stato aggiunto un widget che permette di ricercare le varie card in base all'evento, al luogo o alla persona.\\
+Nel prototipo iniziale non era presente nessun filtro quindi all'interno della pagina principale dell'applicazione, ovvero la pagina \textit{uscite\_overview\_screen.dart}, è stato aggiunto un widget che permette di ricercare le varie card in base all'evento, al luogo o alla persona (vedi Figura 4.8).\\
 Digitando nella barra di ricerca si potranno ricercare solo le card a cui si è interessati.\\
 Per fare ciò è stato inserita una funzione chiamata \textit{ricerca()} che ritorna una TextField come Widget sempre nel file \textit{uscite\_overview\_screen.dart}.\\
 
@@ -317,73 +310,28 @@ Per fare ciò è stato inserita una funzione chiamata \textit{ricerca()} che rit
 
 \newpage
 
-\subsection{Campi obbligatori e pagina modifica e crea}
-All'interno di questa pagina sono stati tolti tutti i campi obbligatori non richiesti.\\
-Per fare ciò sono stati eliminati tutti i validator non necessari nel file \textit{pianifica\_screen.dart} e lasciato i restanti con le apposite funzioni.\\
-Inoltre all'interno di questa pagina sono stati aggiustati i campi degli orari in quanto nella funzione \textit{selezionaOra()} tornava i minuti attuali.\\
-Per rendere all'utente più comprensibile il salvataggio è stata sostituita l'icona precedente di salvataggio con l'icona \textit{Icon(Icons.save)}.\\
-
-\begin{figure}[htbp]	
-	\centering
-	\includegraphics[width=6cm]{immagini/modifica.jpeg}
-	\caption{Campi obbligatori}
-	\label{fig:Campi obbligatori}
-\end{figure}
-
-\newpage
-
-\subsection{Colori}
-All'interno dei vari file, sono stati cambiati diversi colori, in modo che venissero utilizzati principalmente quelli definiti nell'applicazione, ovvero il bianco e l'arancione.\\
-
-\begin{figure}[htbp]	
-	\centering
-	\includegraphics[width=6cm]{immagini/colori.jpeg}
-	\caption{Colori}
-	\label{fig:Colori}
-\end{figure}
-
-
-\subsection{Eliminazione, Modifica e Aggiunta di un'attività}
-In seguito alle modifiche di vari campi, sono state sistemate le pagine di eliminazione, modifica e aggiunta di un'attività con nuovi valori e formati in modo che venissero rispettate le richieste del backend.\\
-In particolar modo sono stati sistemati i valori che riguardavano la data e l'orario con i nuovi formati richiesti. Inoltre la lunghezza e il numero di partecipanti richiedevano rispettivamente un double e un intero.
-
-\newpage
-
 \subsection{Mappa percorso}
-Per gestire la mappa sono stati creati due providers:
+Nel prototipo iniziale la mappa non era presente e per poterla gestire sono stati creati due providers:
 \begin{itemize}
 	\item location.dart: che è il modello e contiene tutti i dati che riguardano una posizione;
 	\item locations.dart: che permette di chiamare il backend per ottenere i vari valori da visualizzare nella mappa.
 \end{itemize}
 La mappa viene creata nel file \textit{dettaglio\_screen.dart} e viene mostrata solo se c'è almeno una posizione nel database per l'attività selezionata.\\
 Per visualizzare la mappa viene usato Leaflet, una libreria JavaScript per sviluppare mappe geografiche interattive, e viene creato un array a cui vengono aggiunte con una chiamata tutte le posizioni relative a quell'attività.\\ 
-Queste posizioni vengono poi disegnate sulla mappa mettendo un marker di colore arancione sulla prima posizione e successivamente vengono collegate in ordine temporale tutte le altre posizioni presenti nell'array con una riga viola fino ad arrivare all'ultima che avrà un marker di colore verde.\\
+Queste posizioni vengono poi disegnate sulla mappa mettendo un marker di colore arancione sulla prima posizione e successivamente vengono collegate in ordine temporale tutte le altre posizioni presenti nell'array con una riga viola fino ad arrivare all'ultima che avrà un marker di colore verde (vedi Figura 4.9).\\
 
 \begin{figure}[htbp]	
 	\centering
 	\includegraphics[width=6cm]{immagini/mappa.jpeg}
-	\caption{Mappa percorso}
+	\caption{Mappa con il percorso effettuato dell'attività selezionata}
 	\label{fig:Mappa percorso}
 \end{figure}
 
 \newpage
 
-\subsection{Aggiornamento automatico mappa}
-Per fare in modo che la mappa si aggiorni in modo automatico è stato inserito un Timer che ogni 30 secondi va a chiamare la funzione che ritorna tutte le posizioni di quell'attività, così da aggiornare l'array descritto precedentemente.\\
-Per evitare che il Timer sia ricostruito ogni volta è stato usato un valore booleano che permette la costruzione del Timer solo la prima volta.\\
-
-\begin{figure}[htbp]	
-	\centering
-	\includegraphics[width=14cm]{immagini/automatico.png}
-	\caption{Aggiornamento automatico mappa}
-	\label{fig:Aggiornamento automatico mappa}
-\end{figure}
-
-\newpage
-
 \subsection{Mappa schermo intero}
-Per fare in modo che la mappa sia più utilizzabile e scorrevole all'utente è stata creata la possibilità di vederla a schermo intero.\\
-Per fare ciò è stato usato un valore booleano, ovvero \textit{ingradisci}, inizialmente uguale a false, che se impostato uguale a true permetteva di vedere nello schermo solo la mappa.\\
+Per fare in modo che la mappa sia più utilizzabile e scorrevole all'utente è stata creata la possibilità di vederla a schermo intero (vedi Figura 4.10).\\
+Per fare ciò è stato usato un valore booleano, ovvero \textit{ingradisci}, inizialmente uguale a false, che se impostato uguale a true permette di vedere nello schermo solo la mappa.\\
 Cliccando sul bottone \textit{schermo intero} viene infatti settato questo valore a true e istantaneamente viene ricostruita la pagina con la mappa a schermo intero.\\
 Una volta che la mappa è a schermo intero, premendo sull'icona con la croce in alto a destra viene settato il booleano a false, ricostruendo la pagina come in precedenza con tutti i dettagli dell'attività.\\
 
@@ -397,11 +345,11 @@ Una volta che la mappa è a schermo intero, premendo sull'icona con la croce in 
 \newpage
 
 \subsection{Filtro avanzato di ricerca attività}
-Per creare il filtro avanzato è stata creata una funzione \textit{showFilterMenu()} nel file \textit{uscite\_overview\_screen.dart} che contiene una \textit{showDialog}.\\
-Per aprire il menù dei filtri bisognerà premere sull'icona dei filtri situata in basso a destra.\\
-All'interno di questo menu è possibile filtrare le attività in base allo sport, alla data e se si tratta di tue attività.\\
+Come detto in precedenza, nel applicazione esistente non era presente nessun filtro. Quindi per creare il filtro avanzato è stata creata una funzione \textit{showFilterMenu()} nel file \textit{uscite\_overview\_screen.dart} che contiene una \textit{showDialog}.\\
+Per aprire il menù dei filtri bisognerà premere sull'icona dei filtri situata in basso a destra.
+All'interno di questo menu è possibile filtrare le attività in base allo sport, alla data e se si tratta di tue attività (vedi Figura 4.11).\\
 Per applicare i vari filtri basterà premere sull'icona check.
-Una volta premuto sull'icona, viene ricostruita la pagina e impostato il valore booleano che gestisce il filtro uguale a true.\\
+Una volta premuto sull'icona, viene ricostruita la pagina e impostato il valore booleano che gestisce il filtro uguale a true.
 Subito dopo aver letto il valore uguale a true, va chiamare nel provider \textit{uscite.dart} la funzione \textit{findBySporteData} che ritorna solo le card che rispettano i valori messi nel filtro.\\
 L'icona con la croce, una volta premuta, setta il valore del filtro a false e ricostruisce la pagina chiudendo la showdialog(menù) dei filtri e cancellando i filtri precedentemente applicati.\\
 Per poter capire se abbiamo applicato i filtri basterà guardare se l'icona dei filtri ha il colore verde.
@@ -416,9 +364,65 @@ Invece se non avremo filtri applicati l'icona avrà il solito colore bianco.
 
 \newpage
 
+\subsection{Aggiornamento automatico mappa}
+Per fare in modo che la mappa si aggiorni in modo automatico, è stato inserito un Timer (vedi Figura 4.12) che ogni 30 secondi chiama la funzione che ritorna tutte le posizioni di quell'attività, così da aggiornare l'array descritto precedentemente.\\
+Per evitare che il Timer sia ricostruito ogni volta, è stato usato un valore booleano che permette la costruzione del Timer solo la prima volta.\\
+
+\begin{figure}[htbp]	
+	\centering
+	\includegraphics[width=14cm]{immagini/automatico.png}
+	\caption{Aggiornamento automatico mappa}
+	\label{fig:Aggiornamento automatico mappa}
+\end{figure}
+
+\subsection{Logo}
+Rispetto al prototipo iniziale è stato modificato il logo di base di Flutter con quello di Sportwill (vedi Figura 4.13).\\
+Per  fare ciò è stato inserita l'immagine del logo all'interno della seguente cartella \textit{app/src/main/res/mipmap/}.\\
+In alternativa si poteva definire nel file \textit{pubspec.yaml} il percorso del logo dell'applicazione e poi inserire l'immagine del logo nella cartella appena definita.\\
+
+\begin{figure}[htbp]	
+	\centering
+	\includegraphics[width=6cm]{immagini/logosportwill.png}
+	\caption{Logo Sportwill}
+	\label{fig:Logo Sportwill}
+\end{figure}
+
+\newpage
+
+\subsection{Campi obbligatori e pagina modifica e crea}
+Nel prototipo esistente tutti i campi della pagina modifica e crea erano obbligatori. Perciò, in accordo con il tutor Fabio Pallaro, per facilitare l'utente nella creazione e modifica di un'attività sono stati modificati in facoltativi alcuni campi.\\
+Per fare ciò sono stati eliminati tutti i validator non necessari nel file \textit{pianifica\_screen.dart} e lasciato i restanti con le apposite funzioni.\\
+Inoltre all'interno di questa pagina sono stati aggiustati i campi degli orari in quanto nella funzione \textit{selezionaOra()} tornava i minuti attuali.\\
+Per rendere all'utente più comprensibile il salvataggio è stata sostituita l'icona precedente di salvataggio con l'icona \textit{Icon(Icons.save)} (vedi Figura 4.14).\\
+
+\begin{figure}[htbp]	
+	\centering
+	\includegraphics[width=6cm]{immagini/modifica.jpeg}
+	\caption{Campi obbligatori}
+	\label{fig:Campi obbligatori}
+\end{figure}
+
+\newpage
+
+\subsection{Eliminazione, Modifica e Aggiunta di un'attività}
+In seguito alle modifiche di vari campi, sono state sistemate le pagine di eliminazione, modifica e aggiunta di un'attività con nuovi valori e formati in modo che venissero rispettate le richieste del backend.\\
+In particolar modo sono stati sistemati i valori che riguardavano la data e l'orario con i nuovi formati richiesti. Inoltre la lunghezza in  chilometri dell'attività e il numero di partecipanti richiedevano rispettivamente un double e un intero.
+
+\subsection{Colori}
+All'interno dei vari file, sono stati cambiati diversi colori, in modo che venissero utilizzati principalmente quelli definiti nell'applicazione, ovvero il bianco e l'arancione (vedi Figura 4.15).\\
+
+\begin{figure}[htbp]	
+	\centering
+	\includegraphics[width=6cm]{immagini/colori.jpeg}
+	\caption{Colori}
+	\label{fig:Colori}
+\end{figure}
+
+\newpage
+
 \subsection{Pubblicazione applicazione Play Store}
-Questa è l'ultima attività effettuata che non è stata completata in modo pratico ma solo studiata anche se con molte probabilità in futuro è possibile che l'applicazione venga caricata sul Play Store.\\
-Per pubblicare l'applicazione sul Play Store è stata studiata la documentazione fornita da Flutter al seguente indirizzo \url{https://flutter.dev/docs/deployment/android}.
+Questa è l'ultima attività effettuata che non è stata completata in modo pratico ma solo studiata anche se con molte probabilità in futuro è possibile che l'applicazione venga caricata sul Play Store, il cui logo è riportato in Figura 4.16.\\
+Per pubblicare l'applicazione sul Play Store è stata studiata la documentazione fornita da Flutter \cite{pubbps}.
 Come prima cosa bisogna lanciare da terminale il seguente comando: \textit{keytool -genkey -v -keystore c:/Users/USER\_NAME/upload-keystore.jks -storetype JKS -keyalg RSA -keysize 2048 -validity 10000 -alias upload}, modificando il percorso.\\
 Successivamente dopo aver fatto tutte le configurazioni necessarie bisognerà modificare il file key.properties con i valori appena configurati.\\
 Dopo aver apportato le modifiche al file key.properties bisognerà modificare anche il file build.gradle come specificato dalla documentazione.\\
