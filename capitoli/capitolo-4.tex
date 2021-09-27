@@ -7,41 +7,40 @@
 \label{cap:Sportwill}
 %**************************************************************
 
-\intro{In questo capitolo viene descritto il progetto di stage e il prototipo esistente, le tecnologie e gli strumenti utilizzati. Viene inoltre effettuata un'analisi dei requisiti per poi definire come le varie funzionalità sono state implementate. }\\
+\intro{In questo capitolo vengono descritti l'applicazione Sportwill, le tecnologie e gli strumenti utilizzati. Viene inoltre effettuata un'analisi dei requisiti per poi definire come le varie funzionalità sono state implementate. }\\
 
 %**************************************************************
 
 \section{Introduzione all'applicazione Sportwill}
-Sportwill è un'applicazione che permette di gestire eventi sportivi.\\
+Sportwill è un'applicazione che permette di gestire eventi sportivi.
 Come detto nel Capitolo 2, prima di iniziare il progetto di stage esisteva già una prima versione dell'applicazione realizzata da uno stagista in passato.
 Questa primo prototipo conteneva solo alcune delle funzionalità necessarie.
 Infatti erano già presenti le pagine di login e registrazioni, la pagina principale dove vengono visualizzate le card \cite{card}, la pagina con le specifiche dell'attività selezionata dove però mancavano alcuni dati importanti e le pagine di creazione e modifica di un'attività.
- Tutte le altre implementazioni, fondamentali per completare l'applicazione, sono state realizzate durante il periodo di stage.
-Attualmente l'applicazione è completa e dopo essersi autenticati nel sistema si possono visualizzare tutte le attività presenti, passate e future attraverso delle card.\\
+ Tutte le altre implementazioni, fondamentali per completare l'applicazione, sono state realizzate durante il periodo di stage. Attualmente l'applicazione è completa e, dopo essersi autenticati nel sistema, si possono visualizzare tutte le attività presenti, passate e future attraverso delle card.
  È possibile cercare queste attività utilizzando i vari filtri presenti oppure scorrendo la pagina.\\ 
- Ogni utente può gestire i propri eventi, creando nuove attività e modificandole successivamente nell'apposita sezione.\\
- Quando un utente vuole far partire un nuovo evento dovrà andare sulle specifiche dell'attività e premere sull'apposito bottone per farla iniziare e successivamente la medesima potrà essere messa anche in pausa.\\
+ Ogni utente può gestire i propri eventi, creando nuove attività e modificandole successivamente nell'apposita sezione.
+ Quando un utente vuole far partire un nuovo evento dovrà andare sulle specifiche dell'attività e premere sull'apposito bottone per farla iniziare e successivamente la medesima potrà essere messa anche in pausa.
  Una volta iniziata l'attività, verranno presi i dati relativi alla posizione così da poter far vedere in una mappa la posizione in tempo reale.
  Grazie a questa mappa, gli altri utenti premendo sull'apposito bottone segnaleranno a chi ha fatto partire l'evento che vogliono partecipare anche loro così da poterlo raggiungere.
  
  \newpage
  
- Di seguito, in Figura 4.1 e in Figura 4.2, vengono riportate due immagini dell'applicazione esistente.\\
+ \noindent Di seguito, in Figura 4.1 e in Figura 4.2, vengono riportate due immagini dell'applicazione esistente.\\
  La prima rappresenta la pagina principale dell'applicazione alla quale si arriva dopo essersi autenticati al sistema mentre la seconda rappresenta i dettagli di una nuova attività alla quale posso partecipare premendo sul bottone \textit{Partecipo anche io!}.\\
  
 \begin{figure}[htbp]
 	\begin{minipage}[b]{0.47\textwidth}
 		\centering
 		\includegraphics[width=6cm]{immagini/colori.jpeg}
-		\caption{Pagina principale}
-		\label{fig:Pagina principale}
+		\caption{Pagina principale esistente}
+		\label{fig:Pagina principale esistente}
 	\end{minipage}
 	\hfill
 	\begin{minipage}[b]{0.47\textwidth}
 		\centering
 		\includegraphics[width=6cm]{immagini/partecipo.jpeg}
-		\caption{Schermata di partecipazione}
-		\label{fig:Schermata di partecipazione}
+		\caption{Schermata di partecipazione esistente}
+		\label{fig:Schermata di partecipazione esistente}
 	\end{minipage}
 \end{figure}
  
@@ -49,7 +48,7 @@ Attualmente l'applicazione è completa e dopo essersi autenticati nel sistema si
 
 \section{Struttura dei file del progetto Sportwill}
 
-In base alla struttura già presente in passato e in accordo con il tutor Fabio Pallaro, i file, attualmente, sono stati suddivisi nelle varie sottocartelle in base al loro compito (vedi Figura 4.3).\\
+In base alla struttura già presente in passato e in accordo con il tutor Fabio Pallaro, i file, attualmente, sono stati suddivisi nelle varie sottocartelle in base al loro compito (vedi Figura 4.3).
 Oltre al file main.dart, che è il file principale dell'applicazione, sono presenti altre 4 cartelle che permettono di organizzare meglio il lavoro:
 \begin{itemize}
 	\item \textbf{screens}: crea tutte le pagine dell'applicazione con gli appositi widget;
@@ -79,7 +78,7 @@ Tra questi i principali sono:
 \subsection{Android Studio}
 Android Studio, il cui logo è riportato in Figura 4.4, è un IDE per lo sviluppo per la piattaforma Android \cite{android}.
 Questo IDE, già utilizzato da me in precedenza, è stato configurato correttamente installando i plugin per Flutter e Dart necessari.\\
-Android Studio permette inoltre di installare e configurare il cellulare così da poter vedere l'applicazione in modo realistico su un dispositivo fisico.\\
+Android Studio permette inoltre di installare e configurare il cellulare così da poter vedere l'applicazione in modo realistico su un dispositivo fisico.
 È molto valido anche perchè fornisce vari dispositivi virtuali su cui testare l'applicazione.
 
 \begin{figure}[htbp]	
@@ -90,9 +89,9 @@ Android Studio permette inoltre di installare e configurare il cellulare così d
 \end{figure}
 
 \subsection{GitLab}
-GitLab, il cui logo è riportato in Figura 4.5, è una piattaforma web open source che permette la gestione di repository Git.\\
+GitLab, il cui logo è riportato in Figura 4.5, è una piattaforma web open source che permette la gestione di repository Git.
 Grazie a GitLab è possibile lavorare parallelamente
-ad altre persone sullo stesso progetto senza generare conflitti.\\
+ad altre persone sullo stesso progetto senza generare conflitti.
 All'interno della repository presente su GitLab \cite{repo}, viene gestito tutto il progetto per realizzare l'applicazione Sportwill ovvero il backend, l'applicazione mobile e la webapp.\\
 
 \begin{figure}[htbp]	
@@ -104,8 +103,8 @@ All'interno della repository presente su GitLab \cite{repo}, viene gestito tutto
 \newpage
 
 \subsection{Database}
-Il database utilizzato per l'applicazione è DBeaver, il cui logo è riportato in Figura 4.6, che è scaricabile gratuitamente \cite{downdb}.\\
-Oltre a contenere tutti i dati e poter vedere il loro cambiamento in tempo reale, l'utilizzo del database è stato fondamentale per testare che tutto andasse nella maniera prevista verificando che i medesimi si modificassero nei tempi e modi previsti.\\
+Il database utilizzato per l'applicazione è DBeaver, il cui logo è riportato in Figura 4.6, che è scaricabile gratuitamente \cite{downdb}.
+Oltre a contenere tutti i dati e poter vedere il loro cambiamento in tempo reale, l'utilizzo di DBeaver è stato fondamentale per testare in modo agevole che tutto andasse nella maniera prevista verificando che i dati si modificassero nei tempi e modi previsti.\\
 
 \begin{figure}[htbp]	
 	\centering
@@ -276,7 +275,7 @@ Per ogni requisito delle tabelle sottostanti è stata decisa la seguente struttu
 \newpage
 
 \section{Implementazioni}
-Grazie all'analisi dei requisiti sono state individuate le seguenti implementazioni da realizzare:
+Grazie all'analisi dei requisiti, sono state individuate le seguenti implementazioni da realizzare:
 \begin{itemize}
 	\item Filtro di ricerca testo;
 	\item Mappa percorso;
@@ -297,8 +296,8 @@ Tutti i servizi sono stati rilasciati su un'apposita repository aziendale su \te
 \newpage
 
 \subsection{Filtro di ricerca testo}
-Nel prototipo iniziale non era presente nessun filtro quindi all'interno della pagina principale dell'applicazione, ovvero la pagina \textit{uscite\_overview\_screen.dart}, è stato aggiunto un widget che permette di ricercare le varie card in base all'evento, al luogo o alla persona (vedi Figura 4.8).\\
-Digitando nella barra di ricerca si potranno ricercare solo le card a cui si è interessati.\\
+Nel prototipo iniziale non era presente nessun filtro quindi all'interno della pagina principale dell'applicazione, ovvero la pagina \textit{uscite\_overview\_screen.dart}, è stato aggiunto un widget che permette di ricercare le varie card in base all'evento, al luogo o alla persona (vedi Figura 4.8).
+Digitando nella barra di ricerca si potranno ricercare solo le card a cui si è interessati.
 Per fare ciò è stato inserita una funzione chiamata \textit{ricerca()} che ritorna una TextField come Widget sempre nel file \textit{uscite\_overview\_screen.dart}.\\
 
 \begin{figure}[htbp]	
@@ -316,8 +315,8 @@ Nel prototipo iniziale la mappa non era presente e per poterla gestire sono stat
 	\item location.dart: che è il modello e contiene tutti i dati che riguardano una posizione;
 	\item locations.dart: che permette di chiamare il backend per ottenere i vari valori da visualizzare nella mappa.
 \end{itemize}
-La mappa viene creata nel file \textit{dettaglio\_screen.dart} e viene mostrata solo se c'è almeno una posizione nel database per l'attività selezionata.\\
-Per visualizzare la mappa viene usato Leaflet, una libreria JavaScript per sviluppare mappe geografiche interattive, e viene creato un array a cui vengono aggiunte con una chiamata tutte le posizioni relative a quell'attività.\\ 
+La mappa viene creata nel file \textit{dettaglio\_screen.dart} e viene mostrata solo se c'è almeno una posizione nel database per l'attività selezionata.
+Per visualizzare la mappa viene usato Leaflet, una libreria JavaScript per sviluppare mappe geografiche interattive, e viene creato un array a cui vengono aggiunte con una chiamata tutte le posizioni relative a quell'attività.
 Queste posizioni vengono poi disegnate sulla mappa mettendo un marker di colore arancione sulla prima posizione e successivamente vengono collegate in ordine temporale tutte le altre posizioni presenti nell'array con una riga viola fino ad arrivare all'ultima che avrà un marker di colore verde (vedi Figura 4.9).\\
 
 \begin{figure}[htbp]	
@@ -330,9 +329,9 @@ Queste posizioni vengono poi disegnate sulla mappa mettendo un marker di colore 
 \newpage
 
 \subsection{Mappa schermo intero}
-Per fare in modo che la mappa sia più utilizzabile e scorrevole all'utente è stata creata la possibilità di vederla a schermo intero (vedi Figura 4.10).\\
-Per fare ciò è stato usato un valore booleano, ovvero \textit{ingradisci}, inizialmente uguale a false, che se impostato uguale a true permette di vedere nello schermo solo la mappa.\\
-Cliccando sul bottone \textit{schermo intero} viene infatti settato questo valore a true e istantaneamente viene ricostruita la pagina con la mappa a schermo intero.\\
+Per fare in modo che la mappa sia più utilizzabile e scorrevole all'utente è stata creata la possibilità di vederla a schermo intero (vedi Figura 4.10).
+Per fare ciò è stato usato un valore booleano, ovvero \textit{ingradisci}, inizialmente uguale a false, che se impostato uguale a true permette di vedere nello schermo solo la mappa.
+Cliccando sul bottone \textit{schermo intero} viene infatti settato questo valore a true e istantaneamente viene ricostruita la pagina con la mappa a schermo intero.
 Una volta che la mappa è a schermo intero, premendo sull'icona con la croce in alto a destra viene settato il booleano a false, ricostruendo la pagina come in precedenza con tutti i dettagli dell'attività.\\
 
 \begin{figure}[htbp]	
@@ -347,13 +346,13 @@ Una volta che la mappa è a schermo intero, premendo sull'icona con la croce in 
 \subsection{Filtro avanzato di ricerca attività}
 Come detto in precedenza, nel applicazione esistente non era presente nessun filtro. Quindi per creare il filtro avanzato è stata creata una funzione \textit{showFilterMenu()} nel file \textit{uscite\_overview\_screen.dart} che contiene una \textit{showDialog}.\\
 Per aprire il menù dei filtri bisognerà premere sull'icona dei filtri situata in basso a destra.
-All'interno di questo menu è possibile filtrare le attività in base allo sport, alla data e se si tratta di tue attività (vedi Figura 4.11).\\
+All'interno di questo menu è possibile filtrare le attività in base allo sport, alla data e se si tratta di tue attività (vedi Figura 4.11).
 Per applicare i vari filtri basterà premere sull'icona check.
 Una volta premuto sull'icona, viene ricostruita la pagina e impostato il valore booleano che gestisce il filtro uguale a true.
-Subito dopo aver letto il valore uguale a true, va chiamare nel provider \textit{uscite.dart} la funzione \textit{findBySporteData} che ritorna solo le card che rispettano i valori messi nel filtro.\\
-L'icona con la croce, una volta premuta, setta il valore del filtro a false e ricostruisce la pagina chiudendo la showdialog(menù) dei filtri e cancellando i filtri precedentemente applicati.\\
+Subito dopo aver letto il valore uguale a true, va chiamare nel provider \textit{uscite.dart} la funzione \textit{findBySporteData} che ritorna solo le card che rispettano i valori messi nel filtro.
+L'icona con la croce, una volta premuta, setta il valore del filtro a false e ricostruisce la pagina chiudendo la showdialog(menù) dei filtri e cancellando i filtri precedentemente applicati.
 Per poter capire se abbiamo applicato i filtri basterà guardare se l'icona dei filtri ha il colore verde.
-Invece se non avremo filtri applicati l'icona avrà il solito colore bianco.
+Invece se non avremo filtri applicati l'icona avrà il solito colore bianco.\\
 
 \begin{figure}[htbp]	
 	\centering
@@ -376,8 +375,8 @@ Per evitare che il Timer sia ricostruito ogni volta, è stato usato un valore bo
 \end{figure}
 
 \subsection{Logo}
-Rispetto al prototipo iniziale è stato modificato il logo di base di Flutter con quello di Sportwill (vedi Figura 4.13).\\
-Per  fare ciò è stato inserita l'immagine del logo all'interno della seguente cartella \textit{app/src/main/res/mipmap/}.\\
+Rispetto al prototipo iniziale è stato modificato il logo di base di Flutter con quello di Sportwill (vedi Figura 4.13).
+Per  fare ciò è stato inserita l'immagine del logo all'interno della seguente cartella \textit{app/src/main/res/mipmap/}.
 In alternativa si poteva definire nel file \textit{pubspec.yaml} il percorso del logo dell'applicazione e poi inserire l'immagine del logo nella cartella appena definita.\\
 
 \begin{figure}[htbp]	
@@ -390,9 +389,9 @@ In alternativa si poteva definire nel file \textit{pubspec.yaml} il percorso del
 \newpage
 
 \subsection{Campi obbligatori e pagina modifica e crea}
-Nel prototipo esistente tutti i campi della pagina modifica e crea erano obbligatori. Perciò, in accordo con il tutor Fabio Pallaro, per facilitare l'utente nella creazione e modifica di un'attività sono stati modificati in facoltativi alcuni campi.\\
-Per fare ciò sono stati eliminati tutti i validator non necessari nel file \textit{pianifica\_screen.dart} e lasciato i restanti con le apposite funzioni.\\
-Inoltre all'interno di questa pagina sono stati aggiustati i campi degli orari in quanto nella funzione \textit{selezionaOra()} tornava i minuti attuali.\\
+Nel prototipo esistente tutti i campi della pagina \textit{modifica} e \textit{crea} erano obbligatori. Perciò, in accordo con il tutor Fabio Pallaro, per facilitare l'utente nella creazione e modifica di un'attività sono stati modificati in facoltativi alcuni campi.
+Per fare ciò sono stati eliminati tutti i validator non necessari nel file \textit{pianifica\_screen.dart} e lasciato i restanti con le apposite funzioni.
+Inoltre all'interno di questa pagina sono stati aggiustati i campi degli orari in quanto nella funzione \textit{selezionaOra()} tornava i minuti attuali.
 Per rendere all'utente più comprensibile il salvataggio è stata sostituita l'icona precedente di salvataggio con l'icona \textit{Icon(Icons.save)} (vedi Figura 4.14).\\
 
 \begin{figure}[htbp]	
@@ -405,7 +404,7 @@ Per rendere all'utente più comprensibile il salvataggio è stata sostituita l'i
 \newpage
 
 \subsection{Eliminazione, Modifica e Aggiunta di un'attività}
-In seguito alle modifiche di vari campi, sono state sistemate le pagine di eliminazione, modifica e aggiunta di un'attività con nuovi valori e formati in modo che venissero rispettate le richieste del backend.\\
+In seguito alle modifiche di vari campi, sono state sistemate le pagine di eliminazione, modifica e aggiunta di un'attività con nuovi valori e formati in modo che venissero rispettate le richieste del backend.
 In particolar modo sono stati sistemati i valori che riguardavano la data e l'orario con i nuovi formati richiesti. Inoltre la lunghezza in  chilometri dell'attività e il numero di partecipanti richiedevano rispettivamente un double e un intero.
 
 \subsection{Colori}
@@ -425,8 +424,8 @@ Questa è l'ultima attività effettuata che non è stata completata in modo prat
 Per pubblicare l'applicazione sul Play Store è stata studiata la documentazione fornita da Flutter \cite{pubbps}.
 Come prima cosa bisogna lanciare da terminale il seguente comando: \textit{keytool -genkey -v -keystore c:/Users/USER\_NAME/upload-keystore.jks -storetype JKS -keyalg RSA -keysize 2048 -validity 10000 -alias upload}, modificando il percorso.\\
 Successivamente dopo aver fatto tutte le configurazioni necessarie bisognerà modificare il file key.properties con i valori appena configurati.\\
-Dopo aver apportato le modifiche al file key.properties bisognerà modificare anche il file build.gradle come specificato dalla documentazione.\\
-Infine bisognerà lanciare dal terminale prima il comando: \textit{flutter clean} e poi: \textit{flutter build appbundle}.\\
+Dopo aver apportato le modifiche al file key.properties bisognerà modificare anche il file build.gradle come specificato dalla documentazione.
+In seguito bisognerà lanciare dal terminale prima il comando: \textit{flutter clean} e poi: \textit{flutter build appbundle}.\\
 Infine per rilasciare l'applicazione bisognerà creare un account al seguente indirizzo \url{https://play.google.com/console/u/0/signup} pagando 25 dollari e successivamente, dopo aver superato tutti i test previsti, l'applicazione potrà essere rilasciata sul Play Store.\\
 
 \begin{figure}[htbp]	
